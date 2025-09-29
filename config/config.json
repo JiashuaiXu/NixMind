@@ -1,0 +1,35 @@
+{
+  "log_level": "INFO",
+  "log_file": null,
+  "llm": {
+    "provider": "ollama",
+    "model_name": "llama3.2:latest",
+    "api_base": "http://localhost:11434",
+    "temperature": 0.1,
+    "max_tokens": 2048,
+    "timeout": 60
+  },
+  "safety": {
+    "require_confirmation": true,
+    "enable_dry_run": true,
+    "risk_threshold": 0.7,
+    "banned_commands": [
+      "rm -rf /",
+      "dd if=",
+      "mkfs",
+      "fdisk",
+      "parted"
+    ]
+  },
+  "nixos": {
+    "config_path": "/etc/nixos/configuration.nix",
+    "backup_generations": 5,
+    "enable_snapshots": true,
+    "snapshot_tool": "auto"
+  },
+  "api": {
+    "host": "127.0.0.1",
+    "port": 8080,
+    "enable_cors": false
+  }
+}

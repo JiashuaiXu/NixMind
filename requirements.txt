@@ -1,0 +1,4 @@
+aiohttp>=3.8.0
+asyncio
+pathlib
+dataclasses; python_version<"3.7"
